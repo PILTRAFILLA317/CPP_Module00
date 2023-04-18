@@ -25,7 +25,7 @@ class PhoneBook{
 				getline(std::cin, ln);
 				std::cout << "Insert nickname > ";
 				getline(std::cin, nick);
-				std::cout << "Insert deepest secret > ";
+				std::cout << "Insert darkest secret > ";
 				getline(std::cin, sec);
 				std::cout << "Insert phone number > ";
 				getline(std::cin, num);
@@ -40,11 +40,17 @@ class PhoneBook{
 				std::cout << "tas pasao fiera\n";
 		}
 		void full_printer(void){
-			std::cout << "Index		|First name|Last name |Nickname  " << std::endl;
+			std::string str_num;
+			std::cout << "\x1B[2J\x1B[H";
+			std::cout << "Index     |First name|Last name |Nickname  " << std::endl;
 			std::cout << "----------|----------|----------|----------" << std::endl;
 			for (int i = 0; i < num_contacts_; i++) {
-				contacts_[i].contact_printer();
+				contacts_[i].contact_printer_tab();
 			}
+			std::cout << "\n Insert index > ";
+			getline(std::cin, str_num);
+			int num = std::stoi(str_num) - 1;
+			contacts_[num].contact_printer_line();
 		}
 };
 
