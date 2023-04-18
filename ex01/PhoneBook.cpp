@@ -4,7 +4,9 @@ int main(int ac, char **av)
 {
 	std::string input_string;
 	std::string exit_string("exit");
-	// std::string
+	std::string add_string("add");
+	std::string print_string("print");
+	PhoneBook phbook;
 
 	(void)av;
 	if (ac > 1){
@@ -16,5 +18,9 @@ int main(int ac, char **av)
 		getline(std::cin, input_string);
 		if (!input_string.compare(exit_string))
 			exit(1);
+		if (!input_string.compare(add_string))
+			phbook.add_contact();
+		if (!input_string.compare(print_string))
+			phbook.full_printer();
 	}
 }
