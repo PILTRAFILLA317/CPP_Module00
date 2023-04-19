@@ -5,7 +5,7 @@ int main(int ac, char **av)
 	std::string input_string;
 	std::string exit_string("exit");
 	std::string add_string("add");
-	std::string print_string("print");
+	std::string print_string("search");
 	PhoneBook phbook;
 
 	(void)av;

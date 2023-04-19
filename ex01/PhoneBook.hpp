@@ -39,6 +39,14 @@ class PhoneBook{
 			else
 				std::cout << "tas pasao fiera\n";
 		}
+		bool is_number(const std::string& str) {
+			try {
+				std::stoi(str);
+			} catch (const std::exception& e) {
+				return false;
+			}
+			return true;
+		}
 		void full_printer(void){
 			std::string str_num;
 			std::cout << "\x1B[2J\x1B[H";
@@ -47,9 +55,17 @@ class PhoneBook{
 			for (int i = 0; i < num_contacts_; i++) {
 				contacts_[i].contact_printer_tab();
 			}
-			std::cout << "\n Insert index > ";
+			std::cout << "\n Insert index > ";	
 			getline(std::cin, str_num);
+			if (!is_number(str_num)) {
+				std::cout << "Error\n";
+				return ;
+			}
 			int num = std::stoi(str_num) - 1;
+			if (((num + 1) > num_contacts_) || ((num + 1) <= 0)) {
+				std::cout << "Error\n";
+				return ;
+			}
 			contacts_[num].contact_printer_line();
 		}
 };
