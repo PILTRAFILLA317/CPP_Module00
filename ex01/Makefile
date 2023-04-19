@@ -4,7 +4,9 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -std=c++98
 RM = rm -f
 
-FILE = PhoneBook
+FILE = PhoneBook \
+Contact \
+main \
 
 SRCS = $(addsuffix .cpp, $(FILE))
 OBJS = $(addsuffix .o, $(FILE))

@@ -5,15 +5,14 @@
 #include <cctype>
 #include "Contact.hpp"
 
-class PhoneBook{
+class PhoneBook {
 	private:
 		Contact contacts_[8];
 		int num_contacts_;
 	public:
-		PhoneBook() : num_contacts_(0) {}
+		PhoneBook();
 		~PhoneBook();
 		void add_contact(void);
-		bool is_number(const std::string& str);
 		void full_printer(void);
 };
 
